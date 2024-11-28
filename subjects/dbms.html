@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS - My Notes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .unit-section {
+            margin-bottom: 30px;
+        }
+
+        .unit-links {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .unit-links li {
+            margin-bottom: 5px;
+        }
+
+        .unit-links li a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);  /* Links are cyan */
+            cursor: pointer;
+        }
+
+        .unit-links li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .notes-section {
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+        }
+        .unit-section h3 a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);  /* Links are cyan */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Database Management Systems (DBMS)</h1>
+    </header>
+    <main>
+        <section>
+            <h2>DBMS Syllabus</h2>
+
+            <!-- Unit 1 -->
+            <div class="unit-section" id="unit1">
+                <h3> <a href ="../dbms/unit1.html">Unit 1: The Foundations</a></h3>
+                <ul class="unit-links">
+                    <li><a href="../dbms/unit1.html#dbms-intro">What DBMS is and why it’s cooler than those outdated file systems.</a></li>
+                    <li><a href="../dbms/unit1.html#dbms-architecture">The "big picture" architecture: schemas, three levels, independence.</a></li>
+                    <li><a href="../dbms/unit1.html#centralized-vs-client">Centralized vs. client-server databases.</a></li>
+                    <li><a href="../dbms/unit1.html#classification-dbms">Classification of DBMS.</a></li>
+                    <li><a href="../dbms/unit1.html#practical1">Practical: Setting up a basic database environment (MySQL/PostgreSQL/SQLite).</a></li>
+                </ul>
+                <button onclick="downloadNotes('unit1')">Download Notes</button>
+                <a href="../assets/docs/dbms/unit1-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+
+            <!-- Unit 2 -->
+            <div class="unit-section" id="unit2">
+                <h3><a href ="../dbms/unit2.html">Unit 2: Entity-Relationship Model </a></h3>
+                <ul class="unit-links">
+                    <li><a href="#designing-entities">Designing entities, attributes, keys, and relationships.</a></li>
+                    <li><a href="#er-diagrams">ER diagrams and real-life case studies.</a></li>
+                    <li><a href="#practical2">Practical: Building ER diagrams for a sample use case (e.g., library management).</a></li>
+                </ul>
+                <button onclick="downloadNotes('unit2')">Download Notes</button>
+                <a href="unit2-cheat-sheet.pdf" target="_blank">Download Cheat Sheet</a>
+            </div>
+
+            <!-- Unit 3 -->
+            <div class="unit-section" id="unit3">
+                <h3><a href ="../dbms/unit3.html">Unit 3: Relational Model and SQL</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#relational-essentials">Relational model essentials: constraints, operations, and schema updates.</a></li>
+                    <li><a href="#relational-algebra">Relational Algebra: SELECT, PROJECT, JOIN.</a></li>
+                    <li><a href="#sql-essentials">SQL 101 to Advanced: creating tables, inserting, updating, deleting, and querying like a wizard.</a></li>
+                    <li><a href="#triggers-assertions-views">Diving into triggers, assertions, and views.</a></li>
+                    <li><a href="#practical3">Practical: Creating and managing a database for a small business use case.</a></li>
+                </ul>
+                <button onclick="downloadNotes('unit3')">Download Notes</button>
+                <a href="unit3-cheat-sheet.pdf" target="_blank">Download Cheat Sheet</a>
+            </div>
+
+            <!-- Unit 4 -->
+            <div class="unit-section" id="unit4">
+                <h3><a href ="../dbms/unit4.html">Unit 4: Database Design and Normalization</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#functional-dependencies">Functional dependencies and normalization (1NF to 5NF).</a></li>
+                    <li><a href="#advanced-dependencies">Advanced dependencies and practical decomposition.</a></li>
+                    <li><a href="#practical4">Practical: Normalize a database from 1NF to 5NF, and see how lean it gets.</a></li>
+                </ul>
+                <button onclick="downloadNotes('unit4')">Download Notes</button>
+                <a href="unit4-cheat-sheet.pdf" target="_blank">Download Cheat Sheet</a>
+            </div>
+
+            <!-- Unit 5 -->
+            <div class="unit-section" id="unit5">
+                <h3><a href ="../dbms/unit5.html">Unit 5: Transaction Management</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#acid-properties">ACID properties: the mantra for reliable databases.</a></li>
+                    <li><a href="#locking-concurrency">Locking and concurrency—because nobody likes data fights.</a></li>
+                    <li><a href="#recovery-crash-management">Recovery and crash management: making your database a survivor.</a></li>
+                    <li><a href="#practical5">Practical: Implementing basic transaction management in SQL and simulating crashes.</a></li>
+                </ul>
+                <button onclick="downloadNotes('unit5')">Download Notes</button>
+                <a href="unit5-cheat-sheet.pdf" target="_blank">Download Cheat Sheet</a>
+            </div>
+
+            <!-- Final Mini-Project -->
+            <div class="unit-section" id="final-project">
+                <h3><a href ="../dbms/final-mini-project.html">Final Mini-Project: Student Management System</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#student-registration">Allows student registration and course enrollment.</a></li>
+                    <li><a href="#grade-tracking">Tracks grades and generates transcripts.</a></li>
+                    <li><a href="#simultaneous-transactions">Handles simultaneous user transactions.</a></li>
+                    <li><a href="#crash-recovery">Includes crash recovery.</a></li>
+                </ul>
+                <button onclick="downloadNotes('final-project')">Download Notes</button>
+                <a href="final-project-cheat-sheet.pdf" target="_blank">Download solution with screenshots</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function downloadNotes(unit) {
+            window.location.href = `../assets/docs/dbms/${unit}-notes.docx`;
+        }
+    </script>
+</body>
+</html>

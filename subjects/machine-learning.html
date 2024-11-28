@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning - My Notes</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Machine Learning</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Units</h2>
+            <ul>
+                <li><a href="#">Unit 1: Introduction to Machine Learning</a></li>
+                <li><a href="#">Unit 2: Linear Regression</a></li>
+                <li><a href="#">Unit 3: Decision Trees</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Resources</h2>
+            <button onclick="downloadNotes('machine-learning')">Download Notes</button>
+            <a href="../assets/docs/machine-learning-cheat-sheet.pdf" target="_blank">Cheat Sheet</a>
+        </section>
+    </main>
+    <script>
+        function downloadNotes(subject) {
+            window.location.href = `../assets/docs/${subject}-notes.docx`;
+        }
+    </script>
+</body>
+</html>
