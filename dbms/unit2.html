@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2: Entity-Relationship Model (ER Model)</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #006d77;
+            margin-bottom: 15px;
+        }
+
+        .subsection-title {
+            font-size: 1.5em;
+            color: #004d40;
+            margin-top: 20px;
+        }
+
+        .content {
+            margin-bottom: 20px;
+        }
+
+        .list {
+            list-style: disc inside;
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .example-box {
+            background-color: #e0f7fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid #006d77;
+        }
+
+        .important {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+        .button-container a {
+            display: inline-block;
+            background-color: #006d77;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button-container a:hover {
+            background-color: #004d40;
+        }
+
+        .visuals {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .visuals img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Unit 2: Entity-Relationship Model (ER Model)</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2 class="section-title">What is the Entity-Relationship Model?</h2>
+            <div class="content">
+                <p>The Entity-Relationship (ER) Model is a high-level conceptual data model that helps in designing databases by visually representing the data and the relationships between them. It uses entities (objects) and relationships between those entities to describe how data interacts within a database.</p>
+                <p>In simpler terms, the ER Model is like creating a blueprint for your database system. You identify the key pieces of information (entities) and then define how they interact (relationships).</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Key Concepts of the ER Model</h2>
+            <div class="content">
+                <ul class="list">
+                    <li><strong>Entity:</strong> An entity is any object or concept about which data is stored. It can be a person, place, thing, or event.</li>
+                    <li><strong>Attributes:</strong> Attributes are the properties or characteristics of an entity. For example, an entity 'Employee' might have attributes like EmployeeID, Name, and DateOfBirth.</li>
+                    <li><strong>Entity Set:</strong> A collection of similar entities is called an entity set. For example, an 'Employee' entity set contains all employee records.</li>
+                    <li><strong>Relationship:</strong> A relationship describes how two or more entities are associated with each other. For example, an employee "works in" a department.</li>
+                    <li><strong>Relationship Set:</strong> A set of similar relationships is a relationship set. For example, the "works in" relationship between employees and departments.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">ER Diagram Components</h2>
+            <div class="content">
+                <p>ER diagrams represent entities, attributes, and relationships using various symbols:</p>
+                <ul class="list">
+                    <li><strong>Rectangles:</strong> Represent entities.</li>
+                    <li><strong>Ellipses:</strong> Represent attributes.</li>
+                    <li><strong>Diamonds:</strong> Represent relationships.</li>
+                    <li><strong>Lines:</strong> Connect entities to their attributes and relationships.</li>
+                </ul>
+                <div class="example-box">
+                    <p>Example: An ER diagram for a simple library database might include entities like 'Book' and 'Author' with a relationship 'written by'. The attributes of 'Book' could be 'BookID', 'Title', and 'PublicationYear'.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Types of Relationships</h2>
+            <div class="content">
+                <p>In an ER model, relationships can be of various types, defined by how entities relate to each other:</p>
+                <ul class="list">
+                    <li><strong>One-to-One (1:1):</strong> A single entity is related to a single instance of another entity.</li>
+                    <li><strong>One-to-Many (1:N):</strong> One entity is related to multiple instances of another entity.</li>
+                    <li><strong>Many-to-Many (M:N):</strong> Multiple instances of one entity are related to multiple instances of another entity.</li>
+                </ul>
+                <div class="example-box">
+                    <p>Example: In a university database, the relationship between 'Department' and 'Professor' is 1:N, as one department can have many professors, but each professor works in only one department.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">ER Diagram Example</h2>
+            <div class="content">
+                <p>Here's an example of an ER diagram for a simple university system:</p>
+                <div class="visuals">
+                    <img src="https://via.placeholder.com/800x400?text=ER+Diagram+Example" alt="ER Diagram Example">
+                </div>
+                <p>This diagram shows entities like 'Student', 'Course', and 'Professor' with relationships between them like 'Enrolls', 'Teaches', and 'OfferedBy'.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Keys in ER Model</h2>
+            <div class="content">
+                <p>In the ER Model, keys are used to uniquely identify an entity or a relationship:</p>
+                <ul class="list">
+                    <li><strong>Primary Key:</strong> A unique identifier for an entity. No two entities in the same set can have the same primary key.</li>
+                    <li><strong>Foreign Key:</strong> An attribute that creates a link between two entities. It is the primary key from one entity set that appears as an attribute in another entity set.</li>
+                    <li><strong>Composite Key:</strong> A primary key that consists of two or more attributes.</li>
+                    <li><strong>Candidate Key:</strong> A set of attributes that can uniquely identify an entity, but one of them is chosen as the primary key.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="button-container">
+                <a href="unit3.html">Next: Relational Model and SQL</a>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
