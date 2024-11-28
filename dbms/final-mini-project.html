@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3: Relational Model and SQL - Advanced Learning</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        nav {
+            display: flex;
+            overflow-x: auto;
+            background-color: #444;
+            white-space: nowrap;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            flex: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: #222;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        h3 {
+            color: #444;
+            margin-top: 30px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+
+        pre {
+            background-color: #e8f5e9;
+            border: 1px solid #a5d6a7;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        pre button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        pre button:hover {
+            background-color: #388e3c;
+        }
+
+        .example-box, .exercise-box, .case-study, .pitfall {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .example-box {
+            background-color: #e7f7e7;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .exercise-box {
+            background-color: #f9f9f9;
+            border-left: 5px solid #ff9800;
+        }
+
+        .case-study {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+        }
+
+        .pitfall {
+            background-color: #ffcccc;
+            border-left: 5px solid #f44336;
+        }
+
+        .button-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .button-container a {
+            display: inline-block;
+            background-color: #006d77;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button-container a:hover {
+            background-color: #004d40;
+        }
+
+        /* Responsive Navigation Bar */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: nowrap;
+                overflow-x: scroll;
+            }
+
+            nav a {
+                flex: none;
+            }
+        }
+    </style>
+    <script>
+        // Function to copy code to clipboard
+        function copyCode(button) {
+            const code = button.previousElementSibling.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = "Copied!";
+                setTimeout(() => button.innerText = "Copy", 2000);
+            }).catch(err => {
+                button.innerText = "Failed!";
+                setTimeout(() => button.innerText = "Copy", 2000);
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Unit 3: Relational Model and SQL - Advanced Learning</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <a href="#project-overview">Project Overview</a>
+            <a href="#requirements">System Requirements</a>
+            <a href="#database-design">Database Design</a>
+            <a href="#practical-implementation">Practical Implementation</a>
+            <a href="#conclusion">Conclusion</a>
+        </ul>
+    </nav>
+    
+    <section id="project-overview">
+        <h2>Project Overview</h2>
+        <p>
+            The **Student Management System** will help manage student registrations, course enrollments, and grade tracking. The system will store data such as:
+            <ul>
+                <li>Student details (StudentID, Name, Age)</li>
+                <li>Courses (CourseID, CourseName)</li>
+                <li>Enrollment information (StudentID, CourseID, Grade)</li>
+            </ul>
+        </p>
+        <p>
+            The system will handle real-time transactions like enrolling students in courses, assigning grades, and viewing transcripts. We'll also incorporate transaction management, ACID properties, and recovery techniques.
+        </p>
+    </section>
+    
+    <section id="requirements">
+        <h2>System Requirements</h2>
+        <ul>
+            <li><strong>Database System:</strong> MySQL or PostgreSQL</li>
+            <li><strong>Backend Language:</strong> Python (with SQLAlchemy or other ORM) or PHP</li>
+            <li><strong>Tools:</strong> Database design tools like Lucidchart or dbdiagram.io</li>
+            <li><strong>Optional:</strong> Frontend framework (e.g., React or Angular) for a user interface</li>
+        </ul>
+    </section>
+    
+    <section id="database-design">
+        <h2>Database Design</h2>
+        <h3>Entities and Relationships</h3>
+        <ul>
+            <li><strong>Student:</strong> Stores student information.</li>
+            <li><strong>Course:</strong> Stores course details.</li>
+            <li><strong>Enrollment:</strong> Stores the relationship between students and courses, as well as the grades.</li>
+        </ul>
+    
+        <h3>Entity-Relationship Diagram (ERD)</h3>
+        <p>Below is the ERD for the Student Management System:</p>
+        <img src="erd-example.png" alt="ERD Example" width="100%" />
+    
+        <h3>Table Design</h3>
+        <pre>
+        CREATE TABLE Students (
+            StudentID INT PRIMARY KEY,
+            Name VARCHAR(100),
+            Age INT
+        );
+    
+        CREATE TABLE Courses (
+            CourseID INT PRIMARY KEY,
+            CourseName VARCHAR(100)
+        );
+    
+        CREATE TABLE Enrollments (
+            EnrollmentID INT PRIMARY KEY,
+            StudentID INT,
+            CourseID INT,
+            Grade CHAR(2),
+            FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
+            FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
+        );
+        </pre>
+    </section>
+    
+    <section id="practical-implementation">
+        <h2>Practical Implementation</h2>
+        <p>
+            The practical implementation will involve:
+            <ul>
+                <li>Creating the necessary tables in the database.</li>
+                <li>Implementing the transaction process for course enrollment, where a student is added to a course and the grade is assigned.</li>
+                <li>Implementing **ACID properties**: ensuring that transactions are atomic, consistent, isolated, and durable.</li>
+                <li>Handling failures: Simulate a crash during a transaction and ensure that the database maintains consistency through rollback and recovery mechanisms.</li>
+            </ul>
+        </p>
+    
+        <h3>Transaction Example</h3>
+        <p>Here’s how the enrollment and grade assignment process might look like:</p>
+        <pre>
+        BEGIN TRANSACTION;
+        INSERT INTO Enrollments (StudentID, CourseID, Grade) VALUES (101, 1, 'A');
+        UPDATE Students SET Age = 22 WHERE StudentID = 101;
+        COMMIT;
+        </pre>
+    
+        <h3>Rollback Example (Crash Recovery)</h3>
+        <p>If a crash happens during the transaction:</p>
+        <pre>
+        BEGIN TRANSACTION;
+        INSERT INTO Enrollments (StudentID, CourseID, Grade) VALUES (101, 1, 'A');
+        ROLLBACK;
+        </pre>
+    
+        <p>Here, the rollback ensures that the enrollment process doesn’t affect the integrity of the database in case of a crash.</p>
+    </section>
+    
+    <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>
+            Upon completing the Student Management System, you will have:
+            <ul>
+                <li>Created and managed database tables using SQL</li>
+                <li>Designed an efficient relational model</li>
+                <li>Implemented real-time transactions with proper concurrency control</li>
+                <li>Handled transaction recovery scenarios</li>
+            </ul>
+            This mini-project encapsulates all of the skills you’ve learned in DBMS, and it provides practical experience in managing a real-world database system. By finishing this project, you'll be prepared for more complex database management tasks in the future.
+        </p>
+    </section>
+    
+
+        <div class="button-container">
+            <a href="../index.html">Home</a>
+        </div>
+    </div>
+</body>
+</html>
