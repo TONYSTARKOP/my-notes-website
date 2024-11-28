@@ -5,136 +5,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit 1: Introduction to DBMS</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #006d77;
+            margin-bottom: 15px;
+        }
+
+        .subsection-title {
+            font-size: 1.5em;
+            color: #004d40;
+            margin-top: 20px;
+        }
+
+        .content {
+            margin-bottom: 20px;
+        }
+
+        .list {
+            list-style: disc inside;
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .example-box {
+            background-color: #e0f7fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid #006d77;
+        }
+
+        .important {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+        .button-container a {
+            display: inline-block;
+            background-color: #006d77;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button-container a:hover {
+            background-color: #004d40;
+        }
+
+        .visuals {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .visuals img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Unit 1: Introduction to DBMS</h1>
+        <h1>Unit 1: Introduction to DBMS – The Deep Dive</h1>
     </header>
-    <main>
-        <!-- Subtopic Section 1: What is DBMS -->
-        <section id="dbms-intro">
-            <h3>What is a DBMS?</h3>
-            <p>A Database Management System (DBMS) is a system that manages the creation, maintenance, and use of databases. It provides an interface for users to interact with the database and ensures that data is stored, retrieved, and modified in an efficient and organized manner. It also helps maintain data integrity, security, and consistency.</p>
-            <p>In layman’s terms, think of DBMS as a library management system:</p>
-            <ul>
-                <li>Instead of books, it stores data in tables.</li>
-                <li>It organizes this data, making sure everything is categorized, easy to find, and not duplicated.</li>
-                <li>It’s like having a very smart librarian who knows exactly where every single piece of information is.</li>
-            </ul>
+
+    <div class="container">
+        <section>
+            <h2 class="section-title">What is a DBMS?</h2>
+            <div class="content">
+                <p>A Database Management System (DBMS) is a system that manages the creation, maintenance, and use of databases. It provides an interface for users to interact with the database and ensures that data is stored, retrieved, and modified in an efficient and organized manner. It also helps maintain data integrity, security, and consistency.</p>
+                <p>In layman’s terms, think of DBMS as a <span class="important">library management system</span>:</p>
+                <ul class="list">
+                    <li>Instead of books, it stores data in tables.</li>
+                    <li>It organizes this data, making sure everything is categorized, easy to find, and not duplicated.</li>
+                    <li>It’s like having a very smart librarian who knows exactly where every single piece of information is.</li>
+                </ul>
+            </div>
         </section>
 
-        <!-- Subtopic Section 2: Advantages of DBMS -->
-        <section id="dbms-advantages">
-            <h3>Advantages of a DBMS</h3>
-            <h4>Centralized Control</h4>
-            <p>All the data is stored in one place (the database), and you access it through the DBMS, meaning everything is under one roof.</p>
-            <p><strong>Example:</strong> In a small company, all employee details are in a single database, accessed through the HR system.</p>
-
-            <h4>Reduced Data Redundancy</h4>
-            <p>Unlike file systems where the same data might be repeated in multiple places, DBMS ensures that data is stored only once. It links different pieces of data, rather than copying them.</p>
-            <p><strong>Example:</strong> Instead of storing an employee's department in every record, the department is stored separately and linked to the employee record.</p>
-
-            <h4>Improved Security</h4>
-            <p>Data can be securely accessed by only authorized users. The DBMS provides user authentication, permissions, and encryption.</p>
-            <p><strong>Example:</strong> In a banking system, only authorized personnel can access customer financial data.</p>
-
-            <h4>Data Integrity and Consistency</h4>
-            <p>The DBMS ensures that the data is accurate, valid, and consistent at all times by enforcing constraints like primary keys and foreign keys.</p>
-            <p><strong>Example:</strong> An employee’s age must always be a valid number, and a customer ID must always be unique.</p>
-
-            <h4>Backup and Recovery</h4>
-            <p>DBMS offers automatic backup and recovery mechanisms to ensure that data can be restored in case of failure.</p>
-            <p><strong>Example:</strong> If a server crashes, the DBMS can restore the data to the last stable point.</p>
+        <section>
+            <h2 class="section-title">Advantages of a DBMS</h2>
+            <div class="content">
+                <ul class="list">
+                    <li><strong>Centralized Control:</strong> All the data is stored in one place (the database), and you access it through the DBMS, meaning everything is under one roof.
+                        <div class="example-box">Example: In a small company, all employee details are in a single database, accessed through the HR system.</div>
+                    </li>
+                    <li><strong>Reduced Data Redundancy:</strong> Unlike file systems where the same data might be repeated in multiple places, DBMS ensures that data is stored only once. It links different pieces of data, rather than copying them.
+                        <div class="example-box">Example: Instead of storing an employee's department in every record, the department is stored separately and linked to the employee record.</div>
+                    </li>
+                    <li><strong>Improved Security:</strong> Data can be securely accessed by only authorized users. The DBMS provides user authentication, permissions, and encryption.
+                        <div class="example-box">Example: In a banking system, only authorized personnel can access customer financial data.</div>
+                    </li>
+                    <li><strong>Data Integrity and Consistency:</strong> The DBMS ensures that the data is accurate, valid, and consistent at all times by enforcing constraints like primary keys and foreign keys.
+                        <div class="example-box">Example: An employee’s age must always be a valid number, and a customer ID must always be unique.</div>
+                    </li>
+                    <li><strong>Backup and Recovery:</strong> DBMS offers automatic backup and recovery mechanisms to ensure that data can be restored in case of failure.
+                        <div class="example-box">Example: If a server crashes, the DBMS can restore the data to the last stable point.</div>
+                    </li>
+                </ul>
+            </div>
         </section>
 
-        <!-- Subtopic Section 3: DBMS vs File Systems -->
-        <section id="dbms-vs-file-systems">
-            <h3>DBMS vs. File Systems</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Aspect</th>
-                        <th>File System</th>
-                        <th>DBMS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Data Redundancy</td>
-                        <td>High. Same data can be stored in multiple files.</td>
-                        <td>Low. Data is stored once and referenced wherever needed.</td>
-                    </tr>
-                    <tr>
-                        <td>Security</td>
-                        <td>Basic access control.</td>
-                        <td>Advanced access control with roles and permissions.</td>
-                    </tr>
-                    <tr>
-                        <td>Concurrency</td>
-                        <td>Limited. File locking issues when multiple users access the same file.</td>
-                        <td>High. DBMS allows multiple users to access and modify data concurrently, with proper locks.</td>
-                    </tr>
-                    <tr>
-                        <td>Backup & Recovery</td>
-                        <td>Manual. Backups need to be done manually.</td>
-                        <td>Automated. DBMS supports scheduled backups and easy recovery.</td>
-                    </tr>
-                    <tr>
-                        <td>Data Integrity</td>
-                        <td>Not enforced. Integrity needs to be manually maintained.</td>
-                        <td>Enforced with constraints (e.g., primary key, foreign key, check constraints).</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section>
+            <h2 class="section-title">DBMS vs. File Systems</h2>
+            <div class="content">
+                <table border="1" cellpadding="10" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th><strong>Aspect</strong></th>
+                            <th><strong>File System</strong></th>
+                            <th><strong>DBMS</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Data Redundancy</strong></td>
+                            <td>High. Same data can be stored in multiple files.</td>
+                            <td>Low. Data is stored once and referenced wherever needed.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Security</strong></td>
+                            <td>Basic access control.</td>
+                            <td>Advanced access control with roles and permissions.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Concurrency</strong></td>
+                            <td>Limited. File locking issues when multiple users access the same file.</td>
+                            <td>High. DBMS allows multiple users to access and modify data concurrently, with proper locks.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Backup & Recovery</strong></td>
+                            <td>Manual. Backups need to be done manually.</td>
+                            <td>Automated. DBMS supports scheduled backups and easy recovery.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Integrity</strong></td>
+                            <td>Not enforced. Integrity needs to be manually maintained.</td>
+                            <td>Enforced with constraints (e.g., primary key, foreign key, check constraints).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <!-- Subtopic Section 4: Key Concepts in DBMS -->
-        <section id="key-concepts">
-            <h3>Key Concepts in DBMS</h3>
-            <h4>Data Model</h4>
-            <p>A Data Model is a way of structuring data and defines how data is represented and manipulated within the DBMS. There are several types of data models, but the most common ones are:</p>
-            <ul>
-                <li><strong>Relational Model (RDBMS):</strong> Data is organized in tables (relations), and each table consists of rows (records) and columns (attributes).</li>
-                <li><strong>Hierarchical Model:</strong> Data is represented in a tree-like structure where each record has a parent-child relationship.</li>
-                <li><strong>Network Model:</strong> Data is organized in a graph, where records are connected by arcs (relationships).</li>
-                <li><strong>Object-Oriented Model:</strong> Data is represented as objects, similar to data structures in programming languages like Java or C++.</li>
-            </ul>
+        <section>
+            <h2 class="section-title">Key Concepts in DBMS</h2>
+            <div class="content">
+                <h3 class="subsection-title">Data Model</h3>
+                <p>A Data Model is a way of structuring data and defines how data is represented and manipulated within the DBMS. There are several types of data models, but the most common ones are:</p>
+                <ul class="list">
+                    <li><strong>Relational Model (RDBMS):</strong> Data is organized in tables (also called relations), and each table consists of rows (records) and columns (attributes).
+                        <div class="example-box">Example: A Customers table with columns CustomerID, CustomerName, Contact, etc.</div>
+                    </li>
+                    <li><strong>Hierarchical Model:</strong> Data is represented in a tree-like structure where each record (node) has a parent-child relationship.
+                        <div class="example-box">Example: A family tree model, where a "parent" record has "child" records, like in the old IMS DBMS.</div>
+                    </li>
+                    <li><strong>Network Model:</strong> Data is organized in a graph, where records (nodes) are connected by arcs (relationships).
+                        <div class="example-box">Example: A social network, where users (nodes) are connected to each other (relationships).</div>
+                    </li>
+                    <li><strong>Object-Oriented Model:</strong> Data is represented as objects, similar to how data is structured in programming languages like Java or C++.
+                        <div class="example-box">Example: A class Employee could represent employees, with attributes like EmployeeID, Name, Salary, and methods like calculateBonus().</div>
+                    </li>
+                </ul>
 
-            <h4>Schema and Instance</h4>
-            <p><strong>Schema</strong> is the structure of the database. It defines the organization of data, such as the tables, columns, and relationships. <strong>Instance</strong> refers to the actual data stored in the database at a specific point in time.</p>
+                <h3 class="subsection-title">Schema and Instance</h3>
+                <p>Schema is the structure of the database, defining the organization of data. Instance refers to the actual data stored in the database at a specific point in time.</p>
+                <ul class="list">
+                    <li><strong>Schema:</strong> The schema of a SchoolDB might include tables like Students, Teachers, and Classes.</li>
+                    <li><strong>Instance:</strong> If the Students table currently holds 100 student records, that’s the instance of the Students table.</li>
+                </ul>
 
-            <h4>Three-Schema Architecture</h4>
-            <p>The Three-Schema Architecture is the DBMS’s way of abstracting data from the user to ensure data independence. It defines three levels of data interaction:</p>
-            <ul>
-                <li><strong>External Level (User View):</strong> This is the user's view of the data, which may vary depending on user needs.</li>
-                <li><strong>Conceptual Level (Logical Level):</strong> Defines the logical structure of the data, including all data and their relationships.</li>
-                <li><strong>Internal Level (Physical Level):</strong> Describes how data is physically stored, such as the file systems or storage devices.</li>
-            </ul>
+                <h3 class="subsection-title">Three-Schema Architecture</h3>
+                <p>The Three-Schema Architecture is the DBMS’s way of abstracting data from the user to ensure data independence. It defines three levels of data interaction:</p>
+                <ul class="list">
+                    <li><strong>External Level (User View):</strong> The user's view of the data, which might differ depending on the user’s needs.</li>
+                    <li><strong>Conceptual Level (Logical Level):</strong> Defines the logical structure of the database, describing data and relationships.</li>
+                    <li><strong>Internal Level (Physical Level):</strong> Describes how data is physically stored on disk.</li>
+                </ul>
+            </div>
         </section>
 
-        <!-- Subtopic Section 5: DBMS Architectures -->
-        <section id="dbms-architecture">
-            <h3>DBMS Environment and Architectures</h3>
-            <h4>Centralized Architecture</h4>
-            <p>All data is stored and managed on a single server. Clients access the data through this central server.</p>
-            <p><strong>Example:</strong> A small company’s payroll system, where all employee data is stored and managed by one central server.</p>
-
-            <h4>Client-Server Architecture</h4>
-            <p>The database is hosted on a server, and clients (users or applications) access the server via a network.</p>
-            <p><strong>Example:</strong> A university database system where the student or teacher accesses the system via a web interface, but the data is stored and processed on a server.</p>
+        <section class="visuals">
+            <h2>DBMS Models Visualized</h2>
+            <img src="https://via.placeholder.com/800x400?text=DBMS+Models" alt="DBMS Models Visualization">
         </section>
 
-        <!-- Subtopic Section 6: Classification of DBMS -->
-        <section id="classification-dbms">
-            <h3>Classification of DBMS</h3>
-            <p>DBMS can be classified into four major categories:</p>
-            <ul>
-                <li><strong>Relational DBMS (RDBMS):</strong> Data is organized in tables with rows and columns. Example: MySQL, PostgreSQL, Oracle DBMS, Microsoft SQL Server.</li>
-                <li><strong>NoSQL DBMS:</strong> Designed for unstructured or semi-structured data. Common models include document stores, key-value pairs, and column stores. Example: MongoDB (Document-based), Cassandra (Column-family), Redis (Key-Value store).</li>
-                <li><strong>Hierarchical DBMS:</strong> Organizes data in a tree-like structure with parent-child relationships. Example: IBM IMS.</li>
-                <li><strong>Network DBMS:</strong> Organizes data in a graph structure, where nodes represent entities and edges represent relationships. Example: Integrated Data Store (IDS).</li>
-            </ul>
+        <section>
+            <div class="button-container">
+                <a href="unit2.html">Next: Entity-Relationship Model</a>
+            </div>
         </section>
-    </main>
+    </div>
+
 </body>
 </html>
