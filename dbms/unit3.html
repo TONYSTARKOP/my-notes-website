@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3: Relational Model and SQL - Advanced Learning</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        nav {
+            display: flex;
+            overflow-x: auto;
+            background-color: #444;
+            white-space: nowrap;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            flex: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: #222;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        h3 {
+            color: #444;
+            margin-top: 30px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+
+        pre {
+            background-color: #e8f5e9;
+            border: 1px solid #a5d6a7;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        pre button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        pre button:hover {
+            background-color: #388e3c;
+        }
+
+        .example-box, .exercise-box, .case-study, .pitfall {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .example-box {
+            background-color: #e7f7e7;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .exercise-box {
+            background-color: #f9f9f9;
+            border-left: 5px solid #ff9800;
+        }
+
+        .case-study {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+        }
+
+        .pitfall {
+            background-color: #ffcccc;
+            border-left: 5px solid #f44336;
+        }
+
+        .button-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .button-container a {
+            display: inline-block;
+            background-color: #006d77;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button-container a:hover {
+            background-color: #004d40;
+        }
+
+        /* Responsive Navigation Bar */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: nowrap;
+                overflow-x: scroll;
+            }
+
+            nav a {
+                flex: none;
+            }
+        }
+    </style>
+    <script>
+        // Function to copy code to clipboard
+        function copyCode(button) {
+            const code = button.previousElementSibling.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = "Copied!";
+                setTimeout(() => button.innerText = "Copy", 2000);
+            }).catch(err => {
+                button.innerText = "Failed!";
+                setTimeout(() => button.innerText = "Copy", 2000);
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Unit 3: Relational Model and SQL - Advanced Learning</h1>
+    </header>
+
+    <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#section2">Core Concepts</a>
+        <a href="#section3">Relational Algebra</a>
+        <a href="#section4">SQL Basics</a>
+        <a href="#section5">Advanced SQL</a>
+        <a href="#section6">Case Study</a>
+        <a href="#section7">Exercises</a>
+    </nav>
+
+    <div class="container">
+        <section id="introduction">
+            <h2>Introduction to Relational Model and SQL</h2>
+            <p>
+                The relational model, introduced by **E.F. Codd in 1970**, revolutionized the way data is managed. Think of it as the database equivalent of Marvel introducing a cinematic universe—everything structured, interconnected, and primed for maximum utility.
+            </p>
+            <div class="example-box">
+                <strong>Example:</strong> Imagine a relational database as a collection of Google Sheets or Excel files:
+                <ul>
+                    <li><strong>Each sheet:</strong> Represents a <strong>Table</strong>.</li>
+                    <li><strong>Rows:</strong> Are individual data records (like a student’s details).</li>
+                    <li><strong>Columns:</strong> Represent attributes of those records (e.g., Name, Age).</li>
+                </ul>
+                <p>
+                    Example Table: <strong>Students</strong>
+                </p>
+                <table border="1" cellpadding="5" cellspacing="0" style="margin: auto;">
+                    <tr>
+                        <th>StudentID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>John</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mary</td>
+                        <td>22</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        
+        <section id="core-concepts">
+            <h2>Core Concepts of the Relational Model</h2>
+            <h3>1. Relations (Tables)</h3>
+            <p>Tables contain rows (<strong>tuples</strong>) and columns (<strong>attributes</strong>).</p>
+            <ul>
+                <li><strong>Attributes:</strong> Column names (e.g., Name, Age).</li>
+                <li><strong>Tuples:</strong> Rows of data (e.g., [John, 25]).</li>
+            </ul>
+            <div class="example-box">
+                <strong>Example:</strong> In a company’s database:
+                <ul>
+                    <li><strong>Table:</strong> Employees</li>
+                    <li><strong>Attributes:</strong> EmployeeID, Name, Department</li>
+                    <li><strong>Tuple:</strong> [101, Alice, HR]</li>
+                </ul>
+            </div>
+        
+            <h3>2. Keys</h3>
+            <p>Keys ensure uniqueness and establish relationships between tables.</p>
+            <ul>
+                <li><strong>Primary Key:</strong> A unique identifier for rows (e.g., EmployeeID).</li>
+                <li><strong>Foreign Key:</strong> Links tables by referencing a primary key in another table.</li>
+            </ul>
+            <div class="example-box">
+                <strong>Example:</strong>
+                <p>Consider two tables:</p>
+                <table border="1" cellpadding="5" cellspacing="0" style="margin: auto;">
+                    <tr>
+                        <th>Employees</th>
+                        <th>Departments</th>
+                    </tr>
+                    <tr>
+                        <td>EmployeeID</td>
+                        <td>DeptID</td>
+                    </tr>
+                    <tr>
+                        <td>101</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>2</td>
+                    </tr>
+                </table>
+                <p>
+                    <strong>Primary Key:</strong> EmployeeID (unique for each employee).  
+                    <strong>Foreign Key:</strong> DeptID in the Employees table references DeptID in the Departments table.
+                </p>
+            </div>
+        </section>
+        
+        <section id="relational-algebra">
+            <h2>Relational Algebra</h2>
+            <p>
+                Relational Algebra is a procedural query language that defines operations on relations (tables). Think of it as SQL’s ancient, nerdier sibling who doesn’t get enough credit but is still critical for database theory.
+            </p>
+            <h3>Key Operations:</h3>
+            <ul>
+                <li><strong>Select (σ):</strong> Filters rows based on conditions.</li>
+                <li><strong>Project (π):</strong> Selects specific columns.</li>
+                <li><strong>Join (⋈):</strong> Combines rows from two tables.</li>
+            </ul>
+            <div class="example-box">
+                <strong>Example:</strong>
+                <p>Consider a table <strong>Students</strong>:</p>
+                <table border="1" cellpadding="5" cellspacing="0" style="margin: auto;">
+                    <tr>
+                        <th>StudentID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>John</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mary</td>
+                        <td>22</td>
+                    </tr>
+                </table>
+                <ul>
+                    <li>
+                        <strong>Select:</strong> σ(Age > 20) retrieves:
+                        <ul>
+                            <li>[2, Mary, 22]</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Project:</strong> π(Name) retrieves:
+                        <ul>
+                            <li>[John, Mary]</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="sql-basics">
+            <h2>SQL Basics</h2>
+            <h3>1. Creating Tables</h3>
+            <pre>
+        CREATE TABLE Students (
+            StudentID INT PRIMARY KEY,
+            Name VARCHAR(50),
+            Age INT
+        );
+        <button onclick="copyCode(this)">Copy</button>
+            </pre>
+        
+            <h3>2. Inserting Data</h3>
+            <pre>
+        INSERT INTO Students (StudentID, Name, Age)
+        VALUES (1, 'John', 20);
+        <button onclick="copyCode(this)">Copy</button>
+            </pre>
+        </section>
+        
+        <section id="case-study">
+            <h2>Case Study: University Database</h2>
+            <p>
+                Let’s design a database for a university, including three tables:
+            </p>
+            <ul>
+                <li><strong>Students:</strong> StudentID, Name, Age</li>
+                <li><strong>Courses:</strong> CourseID, CourseName</li>
+                <li><strong>Enrollments:</strong> EnrollmentID, StudentID, CourseID</li>
+            </ul>
+            <div class="case-study">
+                <strong>Scenario:</strong> Create a query to list all students and their enrolled courses.
+            </div>
+        </section>
+        
+        <section id="exercises">
+            <h2>Practical Exercises</h2>
+            <div class="exercise-box">
+                <strong>Exercise 1:</strong> Create a library database with tables:
+                <ul>
+                    <li>Books (BookID, Title, AuthorID)</li>
+                    <li>Authors (AuthorID, Name)</li>
+                    <li>Borrowers (BorrowerID, BookID, BorrowDate)</li>
+                </ul>
+                Write queries to:
+                <ul>
+                    <li>Find all books borrowed in the last month.</li>
+                    <li>List all authors with their books.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="button-container">
+            <a href="../dbms/unit4.html">Next: Database Design and Normalization</a>
+        </div>
+    </div>
+</body>
+</html>
