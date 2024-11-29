@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL - Complete Course Index</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .unit-section {
+            margin-bottom: 30px;
+        }
+
+        .unit-links {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .unit-links li {
+            margin-bottom: 5px;
+        }
+
+        .unit-links li a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+
+        .unit-links li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .notes-section {
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+        }
+        .unit-section h3 a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SQL Complete Course Index</h1>
+    </header>
+    <main>
+        <section>
+            <!-- Chapter 1 -->
+            <div class="unit-section" id="chapter1">
+                <h3><a href="../sql/chapter1.html">Chapter 1: Introduction to SQL</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#what-is-sql">What is SQL?</a></li>
+                    <li><a href="#advantages">Why SQL? Advantages and Applications</a></li>
+                    <li><a href="#standards">SQL Standards and Versions</a></li>
+                    <li><a href="#types">Types of SQL Commands</a></li>
+                </ul>
+                <button onclick="downloadNotes('chapter1')">Download Notes</button>
+                <a href="../assets/docs/sql/chapter1-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+
+            <!-- Chapter 2 -->
+            <div class="unit-section" id="chapter2">
+                <h3><a href="../sql/chapter2.html">Chapter 2: Basic SQL Queries</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#select-query">SELECT Query Basics</a></li>
+                    <li><a href="#filtering">Filtering Data with WHERE</a></li>
+                    <li><a href="#sorting">Sorting Data with ORDER BY</a></li>
+                    <li><a href="#limit">Using LIMIT and OFFSET</a></li>
+                </ul>
+                <button onclick="downloadNotes('chapter2')">Download Notes</button>
+                <a href="../assets/docs/sql/chapter2-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+
+            <!-- Chapter 3 -->
+            <div class="unit-section" id="chapter3">
+                <h3><a href="../sql/chapter3.html">Chapter 3: SQL Functions</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#aggregate-functions">Aggregate Functions (SUM, AVG, COUNT)</a></li>
+                    <li><a href="#string-functions">String Functions (CONCAT, LENGTH)</a></li>
+                    <li><a href="#date-functions">Date and Time Functions</a></li>
+                </ul>
+                <button onclick="downloadNotes('chapter3')">Download Notes</button>
+                <a href="../assets/docs/sql/chapter3-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+
+            <!-- Chapter 4 -->
+            <div class="unit-section" id="chapter4">
+                <h3><a href="../sql/chapter4.html">Chapter 4: Joining Tables</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#inner-join">INNER JOIN</a></li>
+                    <li><a href="#outer-join">OUTER JOIN (LEFT, RIGHT, FULL)</a></li>
+                    <li><a href="#self-join">SELF JOIN</a></li>
+                    <li><a href="#cross-join">CROSS JOIN</a></li>
+                </ul>
+                <button onclick="downloadNotes('chapter4')">Download Notes</button>
+                <a href="../assets/docs/sql/chapter4-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+
+            <!-- Chapter 5 -->
+            <div class="unit-section" id="chapter5">
+                <h3><a href="../sql/chapter5.html">Chapter 5: Advanced SQL</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#subqueries">Subqueries</a></li>
+                    <li><a href="#cte">Common Table Expressions (CTEs)</a></li>
+                    <li><a href="#window-functions">Window Functions</a></li>
+                    <li><a href="#indexing">Indexing</a></li>
+                </ul>
+                <button onclick="downloadNotes('chapter5')">Download Notes</button>
+                <a href="../assets/docs/sql/chapter5-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+
+            <!-- Chapter 6 -->
+            <div class="unit-section" id="chapter6">
+                <h3><a href="../sql/chapter6.html">Chapter 6: Constraints and Transactions</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#primary-foreign-key">Primary and Foreign Key Constraints</a></li>
+                    <li><a href="#unique-check">UNIQUE and CHECK Constraints</a></li>
+                    <li><a href="#transactions">Transactions and Rollbacks</a></li>
+                </ul>
+                <button onclick="downloadNotes('chapter6')">Download Notes</button>
+                <a href="../assets/docs/sql/chapter6-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+
+            <!-- Chapter 7 -->
+            <div class="unit-section" id="chapter7">
+                <h3><a href="../sql/chapter7.html">Chapter 7: Database Security</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#user-management">User Management and Privileges</a></li>
+                    <li><a href="#roles">Roles and GRANT/REVOKE</a></li>
+                    <li><a href="#auditing">Auditing and Security Best Practices</a></li>
+                </ul>
+                <button onclick="downloadNotes('chapter7')">Download Notes</button>
+                <a href="../assets/docs/sql/chapter7-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+
+            <!-- Chapter 8 -->
+            <div class="unit-section" id="chapter8">
+                <h3><a href="../sql/chapter8.html">Chapter 8: Performance Optimization</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#query-optimization">Query Optimization Techniques</a></li>
+                    <li><a href="#indexes">Indexes and Their Impact</a></li>
+                    <li><a href="#execution-plans">Understanding Execution Plans</a></li>
+                </ul>
+                <button onclick="downloadNotes('chapter8')">Download Notes</button>
+                <a href="../assets/docs/sql/chapter8-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+            <div class="unit-section" id="chapter9">
+                <h3><a href="../sql/chapter9.html">Chapter 9: Transactions in SQL</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#query-optimization">ACID properties.</a></li>
+                    <li><a href="#indexes">Transaction control commands: BEGIN, COMMIT, ROLLBACK, SAVEPOINT</a></li>
+                    <li><a href="#execution-plans">Locking mechanisms and concurrency control.</a></li>
+                <button onclick="downloadNotes('chapter9')">Download Notes</button>
+                <a href="../assets/docs/sql/chapter9-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+            <div class="unit-section" id="chapter10">
+                <h3><a href="../sql/chapter10.html">Chapter 10: SQL Constraints</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#query-optimization">Types of constraints:
+                        Primary Key
+                        Foreign Key
+                        Unique
+                        Check
+                        Default
+                        Not Null</a></li>
+                    <li><a href="#indexes">Defining and modifying constraints.</a></li>
+                <button onclick="downloadNotes('chapter10')">Download Notes</button>
+                <a href="../assets/docs/sql/chapter10-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+            <div class="unit-section" id="chapter11">
+                <h3><a href="../sql/chapter11.html">Chapter 11: SQL Performance Optimization</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#query-optimization">Query optimization techniques.</a></li>
+                    <li><a href="#indexes">Indexing for performance.</a></li>
+                    <li><a href="#execution-plans">Analyzing query execution plans.</a></li>
+                <button onclick="downloadNotes('chapter11')">Download Notes</button>
+                <a href="../assets/docs/sql/chapter11-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+            <div class="unit-section" id="chapter12">
+                <h3><a href="../sql/chapter12.html">Chapter 12: Real-Life Case Studies</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#query-optimization">E-commerce database.</a></li>
+                    <li><a href="#indexes">Library management system.</a></li>
+                    <li><a href="#execution-plans">Small business inventory management.</a></li>
+                <button onclick="downloadNotes('chapter12')">Download Notes</button>
+                <a href="../assets/docs/sql/chapter12-cheatsheet.docx" target="_blank">Download Cheat Sheet</a>
+            </div>
+            <div class="unit-section" id="chapter13">
+                <h3><a href="../sql/chapter13.html">Chapter 13: Final Project</a></h3>
+                <ul class="unit-links">
+                    <li><a href="#query-optimization">Building a Student Management System using SQL commands:
+                        Database creation and schema design.
+                        Implementing CRUD operations.
+                        Adding constraints and triggers.
+                        Optimizing queries.</a></li>
+                    <button onclick="downloadNotes('chapter13')">Download Notes</button>
+              </div>
+            
+            
+        </section>
+    </main>
+
+    <script>
+        function downloadNotes(chapter) {
+            window.location.href = `../assets/docs/sql/${chapter}-notes.docx`;
+        }
+    </script>
+</body>
+</html>
+
