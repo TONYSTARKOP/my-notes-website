@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS - My Notes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .unit-section {
+            margin-bottom: 30px;
+        }
+
+        .unit-links {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .unit-links li {
+            margin-bottom: 5px;
+        }
+
+        .unit-links li a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);  /* Links are cyan */
+            cursor: pointer;
+        }
+
+        .unit-links li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .notes-section {
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+        }
+        .unit-section h3 a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);  /* Links are cyan */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Database Management Systems (DBMS)</h1>
+    </header>
+    <main>
+        <section>
+            <h2>DBMS Syllabus</h2>
+
+            <!-- unit 1 number system-->
+            <div class="unit-section" id="unit1">
+                <h3><a href ="../aptitude/unit1.html">Unit 1: number</a></h3>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function downloadNotes(unit) {
+            window.location.href = `../assets/docs/dbms/${unit}-notes.docx`;
+        }
+    </script>
+</body>
+</html>

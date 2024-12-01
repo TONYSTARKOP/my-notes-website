@@ -1,6 +1,6 @@
 // Subjects list
 const subjects = [
-    "DBMS","SQL" ,"Machine Learning" , "Shell Scripting using Bash", "CBNST",
+    "DBMS","SQL" ,"Aptitude", "Machine Learning" , "Shell Scripting using Bash", "CBNST",
     "Operating System", "Data Structures", "Algorithms", "Cybersecurity",
     "Computer Networks", "Web Development", "Android Development",
     "Java Full Stack", "Python", "C", "C++", "C#", "Java", "Bash",
